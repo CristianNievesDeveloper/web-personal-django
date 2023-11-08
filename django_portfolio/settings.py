@@ -138,11 +138,14 @@ if not DEBUG:
     # and creating unique names for each version so they can safely be cached forever.
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Define la ubicación en el sistema de archivos donde se almacenarán los archivos multimedia (por ejemplo, imágenes subidas).
-MEDIA_ROOT = BASE_DIR / 'media'
+# # Define la ubicación en el sistema de archivos donde se almacenarán los archivos multimedia (por ejemplo, imágenes subidas).
+# MEDIA_ROOT = BASE_DIR / 'media'
+
 
 # Define la URL pública que se utilizará para acceder a los archivos multimedia desde la aplicación web.
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
