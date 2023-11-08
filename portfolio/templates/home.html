@@ -1,0 +1,122 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    {% load static %}
+    <main>
+        <!------------------------------------------- CARROUSEL ------------------------------------------->
+        <section class="carousel-section" id="home">
+            
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    {% for project in projects %}
+                    <div class="carousel-item active">
+                        <img src="{{project.image.url}}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-md-block">
+                            <p>{{project.description | safe | truncatechars:50}}</p>
+                                {% if project.url and project.github %}
+                                <button class="raise"><a class='raise' data-text='Github' href='{{project.github}}' target="_blank">View GitHub</a></button>
+                                <button class="raise"><a class='raise' data-text='Ver project' href='{{project.url}}' target="_blank">View project</a></button>
+                                {% endif %}
+                        </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              
+                <button class="carousel-control-prev" id="flecha" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" id="flecha" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </section>
+
+        <section class="about-section  mob" id="about">
+           <div class="about-contain">
+                 <h1>I am <strong>Cristian Nieves</strong></h1>
+            <div class="about-img">
+                <img src="{% static "portfolio/cv.jpg" %}" class="img-cv" alt="">
+            </div>
+            <div class="about-contain sections">
+                <h3  class="developer">Web Developer</h3>
+                <p>I am a passionate full-stack web developer with a focus on creating exceptional digital experiences. My journey in the world of development began with curiosity to explore how things work online. Since then, I have been immersed in website creation</p>
+                <a class='h-button centered' data-text='Download CV' href='{% static "portfolio/cv.pdf" %}' target="_blank">
+                    <span><i class="fa-solid fa-file-arrow-down" style="font-size: 1.4rem;"></i></span>
+                </a>
+            </div>
+           </div>
+        </section>        
+        <section class="skill-section sections  mob" id="skill">
+            <div class="skill-title">
+                <h3 class="title">Skills</h3>
+            </div>
+            <div class="skills-contain">
+                <div class="skill">
+                    <img src="{% static "img/html.png" %}" alt="HTML">
+                    <p>HTML</p>
+                </div>
+                <div class="skill">
+                    <img src="{% static "img/css.png" %}" alt="CSS">
+                    <p>CSS</p>
+                </div>
+                <div class="skill">
+                    <img src="{% static "img/bootstraps.png" %}" alt="Bootstrap">
+                    <p>Bootstrap</p>
+                </div>
+                <div class="skill">
+                    <img src="{% static "img/python.png" %}" alt="Python">
+                    <p>Python</p>
+                </div>
+                <div class="skill">
+                    <img src="{% static "img/django.png" %}" alt="Django">
+                    <p>Django</p>
+                </div>
+                <div class="skill">
+                    <img src="{% static "img/pandas.ico" %}" alt="Pandas">
+                    <p>Pandas</p>
+                </div>
+                <div class="skill">
+                    <img src="{% static "img/js.png" %}" alt="JavaScript">
+                    <p>JavaScript</p>
+                </div>
+                
+                <div class="skill json">
+                    <img src="{% static "img/json.png" %}" alt="JSON">
+                    <p>JSON</p>
+                </div>
+                <div class="skill">
+                    <img src="{% static "img/mysql.png" %}" alt="SQL">
+                    <p>SQL</p>
+                </div>
+            </div>
+        </section>
+        <section class="section-project sections  mob">
+            <div class="project-present">
+                <h3 class="title">My projects</h3>
+            </div>
+            <div class="project-container">
+                <div class="project-contain">
+                    {% for project in projects %}
+                        {% if forloop.counter <= 3 %}
+                        <div class="project-item">
+                            <h2 class="title-project">{{project.title}}</h2>
+                            <p>{{project.description | safe | truncatechars:20}}</p>
+                            <img src="{{project.image.url}}" alt="" class="img-fluid"><br>
+                            {% if project.url %}
+                            <button class="raise"><a class='raise' data-text='Github' href='{{project.github}}' target="_blank">View GitHub</a></button>
+                            <button class="raise"><a class='raise' data-text='Ver project' href='{{project.url}}' target="_blank">View project</a></button>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="button-project">
+                <button class="raise"><a href="{% url 'projects_view' %}" class="raise">View more projects</a></button>
+            </div>
+      <section> 
+    </main>
+{% endblock content %}

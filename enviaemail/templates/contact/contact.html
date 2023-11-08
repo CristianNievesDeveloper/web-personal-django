@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<section class="contact oculto hidden mob" id="contact" style="padding: 5.3rem 2rem 2rem 2rem;">
+
+    <h3 class="title"> contact me </h3>
+
+    <div class="row">
+       
+        <form action="{% url 'contact' %}" method="POST" id="form">
+            {% csrf_token %}
+            <div class="inputBox">
+                <span class="fas fa-user"></span>
+                {{ form.name }}
+            </div>
+
+            <div class="inputBox">
+                <span class="fas fa-envelope" ></span>
+                {{ form.email }}
+            </div>
+
+            <div class="inputBox">
+                {{ form.message }}
+            </div>
+          
+            <button class='h-button centered' data-text='Send Message' type="submit" style="color: --tercer-color; border: none;" onmouseover="this.style.color='white'"
+            onmouseout="this.style.color='white'">
+                <span><i class="fa-solid fa-paper-plane" style="font-size: 1.4rem;"  onmouseover="this.style.color='white'"
+                    onmouseout="this.style.color='white'"></i></span>
+            </button>     
+          
+        </form>
+    </div>
+</section>
+
+
+{% endblock content %}

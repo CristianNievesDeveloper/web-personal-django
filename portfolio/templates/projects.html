@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% load static %} 
+
+{% block content %}
+  
+   <section class="section-project">
+        <div class="project-page">
+            <h1 class="title">Projects</h1>
+
+            {% for project in projects %}
+                <div class="card card-body contain">
+                    <div class="row">
+                            <div class="custom-col-left img-project">
+                                <img src="{{project.image.url}}" alt="" class="img-fluid">
+                            </div>
+                            <div class="custom-col-right">
+                                <h2>{{project.title}}</h2>
+                                <p>{{project.description }}</p>
+                                <h4>Technologies Used</h4>
+                                <h6>{{project.tecno }}</h6>
+                                {% if project.url %}
+                                <button class="raise"><a class='raise' data-text='Github' href='{{project.github}}' target="_blank">View GitHub</a></button>
+                                <button class="raise"><a class='raise' data-text='Ver project' href='{{project.url}}' target="_blank">View project</a></button>
+                                {% endif %}
+                            </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+   </section>
+
+{% endblock content %}
