@@ -10,8 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 from pathlib import Path
+from dotenv import load_dotenv, find_dotenv
 import os
 import dj_database_url
+
+
+load_dotenv(find_dotenv())
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,13 +30,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 # SECRET_KEY = 'django-insecure-ar6*he^sv#&k-%3i0!y34y&n&anj$_fys$@i^#cry!to56to7%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'RENDER' not in os.environ
+DEBUG = True if os.environ.get("DEBUG") == 'True' else False
 
 ALLOWED_HOSTS = []
 
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+RENDER_EXTERNAL_HOSTNAME = 'https://cristiannieves-developer.onrender.com'
 
 # Application definition
 
@@ -83,11 +85,12 @@ WSGI_APPLICATION = 'django_portfolio.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-   'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+  'default': dj_database_url.parse(os.environ.get('DATABASE_URL', ''))
+
 #    .config(
 #         # Feel free to alter this value to suit your needs.
-#         # default='postgres://djangoportfolio_45y7_user:sNkIjX7ToFQiRgdiQwFKkMnLWM6x9xRq@dpg-cl5q8uc72pts73erfdo0-a.oregon-postgres.render.com/djangoportfolio_45y7',
-#         # conn_max_age=600
+#         default='postgres://djangoportfolio_45y7_user:sNkIjX7ToFQiRgdiQwFKkMnLWM6x9xRq@dpg-cl5q8uc72pts73erfdo0-a.oregon-postgres.render.com/djangoportfolio_45y7',
+#         conn_max_age=600
 #     )
 }
 
