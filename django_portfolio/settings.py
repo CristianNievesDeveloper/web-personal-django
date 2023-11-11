@@ -10,12 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 from pathlib import Path
-from dotenv import load_dotenv, find_dotenv
+# from dotenv import load_dotenv, find_dotenv
 import os
 import dj_database_url
 
 
-load_dotenv(find_dotenv())
+# load_dotenv(find_dotenv())
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -84,14 +84,20 @@ WSGI_APPLICATION = 'django_portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-  'default': dj_database_url.parse(os.environ.get('DATABASE_URL', ''))
+# DATABASES = {
+#   'default': dj_database_url.parse(os.environ.get('DATABASE_URL', ''))
 
-#    .config(
-#         # Feel free to alter this value to suit your needs.
-#         default='postgres://djangoportfolio_45y7_user:sNkIjX7ToFQiRgdiQwFKkMnLWM6x9xRq@dpg-cl5q8uc72pts73erfdo0-a.oregon-postgres.render.com/djangoportfolio_45y7',
-#         conn_max_age=600
-#     )
+# #    .config(
+# #         # Feel free to alter this value to suit your needs.
+# #         default='postgres://djangoportfolio_45y7_user:sNkIjX7ToFQiRgdiQwFKkMnLWM6x9xRq@dpg-cl5q8uc72pts73erfdo0-a.oregon-postgres.render.com/djangoportfolio_45y7',
+# #         conn_max_age=600
+# #     )
+# }
+
+DATABASES = {
+'default': {
+'ENGINE': 'django.db.backends.sqlite3',
+}
 }
 
 
