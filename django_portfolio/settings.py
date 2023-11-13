@@ -30,7 +30,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 # SECRET_KEY = 'django-insecure-ar6*he^sv#&k-%3i0!y34y&n&anj$_fys$@i^#cry!to56to7%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True if os.environ.get("DEBUG") == 'True' else False
+DEBUG = True 
+# if os.environ.get("DEBUG") == 'True' else False
 
 ALLOWED_HOSTS = ['*']
 
@@ -97,6 +98,7 @@ WSGI_APPLICATION = 'django_portfolio.wsgi.application'
 DATABASES = {
 'default': {
 'ENGINE': 'django.db.backends.sqlite3',
+"NAME": 'prueba'
 }
 }
 
