@@ -7,7 +7,7 @@
         <div class="project-page">
             <h1 class="title">Projects</h1>
 
-            {% for project in projects %}
+            {% comment %} {% for project in projects %}
                 <div class="card card-body contain">
                     <div class="row">
                             <div class="custom-col-left img-project">
@@ -25,7 +25,59 @@
                             </div>
                     </div>
                 </div>
-            {% endfor %}
+            {% endfor %} {% endcomment %}
+
+            <div class="card card-body contain">
+                <div class="row">
+                        <div class="custom-col-left img-project">
+                            <img src="{% static "projects/Coffe_shop_1.jpg" %}" alt="" class="img-fluid">
+                        </div>
+                        <div class="custom-col-right">
+                            <h2>Coffe Shop Template</h2>
+                            <p>This Project Is A Fully Responsive Website For A Coffee Shop. We Used The FontAwesome Library. The Website Features A Menu And A Contact Section With Location Information And Social Media Links.</p>
+                            <h4>Technologies Used</h4>
+                            <h6>Html Css JavaScript FontAwesome</h6>
+
+                            <button class="raise"><a class='raise' data-text='Github' href='https://github.com/CristianNievesDeveloper/Cafeteria-template.github.io' target="_blank">View GitHub</a></button>
+                            <button class="raise"><a class='raise' data-text='Ver project' href='https://cafeteria-template-github-io.vercel.app/' target="_blank">View project</a></button>
+                        </div>
+                </div>
+            </div>
+
+            <div class="card card-body contain">
+                <div class="row">
+                        <div class="custom-col-left img-project">
+                            <img src="{% static "projects/Web_development_agency.jpg" %}" alt="" class="img-fluid">
+                        </div>
+                        <div class="custom-col-right">
+                            <h2>Web Development Agency</h2>
+                            <p>This Is A Fully Responsive Project For A Web Development Agency. The Website Includes A Quote Section, A Projects Section, And A Contact Form Using The EmailJS And FontAwesome Libraries.</p>
+                            <h4>Technologies Used</h4>
+                            <h6>Html Css JavaScript EmailJS FontAwesome</h6>
+
+                            <button class="raise"><a class='raise' data-text='Github' href='https://github.com/CristianNievesDeveloper/DevZone-Agency.github.io' target="_blank">View GitHub</a></button>
+                            <button class="raise"><a class='raise' data-text='Ver project' href='https://www.devzone.store/' target="_blank">View project</a></button>
+                        </div>
+                </div>
+            </div>
+
+            <div class="card card-body contain">
+                <div class="row">
+                        <div class="custom-col-left img-project">
+                            <img src="{% static "projects/Coffe_shop_1.jpg" %}" alt="" class="img-fluid">
+                        </div>
+                        <div class="custom-col-right">
+                            <h2>Coffe Shop Template</h2>
+                            <p>This Project Is A Fully Responsive Website For A Coffee. The Website Includes A Menu, A Product Section Where Clicking On An Item Displays Its Description, A Contact Section With Location And Social Media Links.</p>
+                            <h4>Technologies Used</h4>
+                            <h6>Html Css JavaScript</h6>
+
+                            <button class="raise"><a class='raise' data-text='Github' href='https://github.com/CristianNievesDeveloper/Cafeteria-template-2.github.io' target="_blank">View GitHub</a></button>
+                            <button class="raise"><a class='raise' data-text='Ver project' href='https://cafeteria-template-2-github-io.vercel.app/' target="_blank">View project</a></button>
+                        </div>
+                </div>
+            </div>
+
         </div>
    </section>
 

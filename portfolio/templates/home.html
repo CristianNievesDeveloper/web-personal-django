@@ -9,7 +9,7 @@
             
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    {% for project in projects %}
+                    <!-- {% for project in projects %}
                     <div class="carousel-item active">
                         <img src="{{project.image.url}}" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-md-block">
@@ -20,7 +20,36 @@
                                 {% endif %}
                         </div>
                     </div>
-                  {% endfor %}
+                  {% endfor %} -->
+
+                    <div class="carousel-item active">
+                        <img src="{% static "projects/Coffe_shop_1.jpg" %}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-md-block">
+                            <p>This Project Is A Fully Responsive Website For A Coffee...</p>
+                                <button class="raise"><a class='raise' data-text='Github' href='https://github.com/CristianNievesDeveloper/Cafeteria-template.github.io' target="_blank">View GitHub</a></button>
+                                <button class="raise"><a class='raise' data-text='Ver project' href='https://cafeteria-template-github-io.vercel.app/' target="_blank">View project</a></button>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item active">
+                        <img src="{% static "projects/Web_development_agency.jpg" %}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-md-block">
+                            <p>This Is A Fully Responsive Project For A Web...</p>
+                                <button class="raise"><a class='raise' data-text='Github' href='https://github.com/CristianNievesDeveloper/DevZone-Agency.github.io' target="_blank">View GitHub</a></button>
+                                <button class="raise"><a class='raise' data-text='Ver project' href='https://www.devzone.store/' target="_blank">View project</a></button>
+                        </div>
+                    </div>
+
+
+                    <div class="carousel-item active">
+                        <img src="{% static "projects/Coffe_shop_1.jpg" %}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-md-block">
+                            <p>This Project Is A Fully Responsive Website For A... </p>
+                                <button class="raise"><a class='raise' data-text='Github' href='https://github.com/CristianNievesDeveloper/Cafeteria-template-2.github.io' target="_blank">View GitHub</a></button>
+                                <button class="raise"><a class='raise' data-text='Ver project' href='https://cafeteria-template-2-github-io.vercel.app/' target="_blank">View project</a></button>
+                        </div>
+                    </div>
+
                 </div>
               
                 <button class="carousel-control-prev" id="flecha" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">

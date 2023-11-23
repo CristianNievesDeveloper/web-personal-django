@@ -20,3 +20,4 @@ def home(request):
 def projects_view(request):
     projects = Project.objects.all()
     return render(request, 'projects.html',{'projects': projects})
+
