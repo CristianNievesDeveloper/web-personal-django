@@ -30,16 +30,15 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 # SECRET_KEY = 'django-insecure-ar6*he^sv#&k-%3i0!y34y&n&anj$_fys$@i^#cry!to56to7%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = DEBUG = 'RENDER' not in os.environ
+DEBUG = True
 # if os.environ.get("DEBUG") == 'True' else False
 
-ALLOWED_HOSTS = []
-# ['*']
+ALLOWED_HOSTS = ['*']
 
-# RENDER_EXTERNAL_HOSTNAME = 'https://cristiannieves-developer.onrender.com'
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+RENDER_EXTERNAL_HOSTNAME = 'https://cristiannieves-developer.onrender.com'
+# RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+# if RENDER_EXTERNAL_HOSTNAME:
+#     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 
