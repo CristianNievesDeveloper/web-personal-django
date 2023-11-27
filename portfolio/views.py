@@ -21,3 +21,6 @@ def projects_view(request):
     projects = Project.objects.all()
     return render(request, 'projects.html',{'projects': projects})
 
+
+# def custom_404(request, exception):
+#     return render(request, 'not_found.html', status=404)

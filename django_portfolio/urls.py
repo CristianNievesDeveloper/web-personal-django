@@ -22,7 +22,7 @@ from django.urls import path
 # Importa las funciones 'static' y 'settings' para manejar archivos estáticos y multimedia en tu aplicación.
 from django.conf.urls.static import static
 from django.conf import settings
-
+from django.conf.urls import handler404
 # Importa las vistas desde la aplicación 'portfolio'.
 from portfolio import views
 from enviaemail.views import contact
@@ -38,6 +38,7 @@ urlpatterns = [
     path('contact/', contact, name='contact'),  # Agrega esta línea
     
 ]
+# handler404 = 'portfolio.views.custom_404'
 
 # Agrega la configuración para servir archivos multimedia (archivos cargados) durante el desarrollo.
 if settings.DEBUG:

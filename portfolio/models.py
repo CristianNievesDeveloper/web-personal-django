@@ -19,3 +19,4 @@ class Project(models.Model):
     url = models.URLField(blank=True)
     
     github = models.URLField(blank=True)
+    
