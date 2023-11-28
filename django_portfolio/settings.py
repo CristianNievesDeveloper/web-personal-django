@@ -34,7 +34,7 @@ DEBUG = False
 # if os.environ.get("DEBUG") == 'True' else False
 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'www.cristiannieves.site']
+ALLOWED_HOSTS = ['*']
 
 
 RENDER_EXTERNAL_HOSTNAME = 'http://www.cristiannieves.site/'

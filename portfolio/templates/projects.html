@@ -7,7 +7,7 @@
         <div class="project-page">
             <h1 class="title">Projects</h1>
 
-            {% comment %} {% for project in projects %}
+             {% for project in projects %}
                 <div class="card card-body contain">
                     <div class="row">
                             <div class="custom-col-left img-project">
@@ -25,9 +25,9 @@
                             </div>
                     </div>
                 </div>
-            {% endfor %} {% endcomment %}
+            {% endfor %} 
 
-            <div class="card card-body contain">
+            {% comment %} <div class="card card-body contain">
                 <div class="row">
                         <div class="custom-col-left img-project">
                             <img src="{% static "img_projects/Coffe_shop_1.jpg" %}" alt="" class="img-fluid">
@@ -76,7 +76,7 @@
                             <button class="raise"><a class='raise' data-text='Ver project' href='https://cafeteria-template-2-github-io.vercel.app/' target="_blank">View project</a></button>
                         </div>
                 </div>
-            </div>
+            </div> {% endcomment %}
 
         </div>
    </section>
