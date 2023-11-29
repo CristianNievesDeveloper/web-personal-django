@@ -33,12 +33,13 @@ urlpatterns = [
     # Define la URL para acceder a la interfaz de administración de Django.
     path('admin/', admin.site.urls),
     # Define una URL vacía como la página de inicio de tu aplicación, utilizando la vista 'home' de la aplicación 'portfolio'.
-    path('', views.home, name='home'),
+    path('', views.hello_word, name='home'),
     path('projects/', views.projects_view, name='projects_view'),
     path('contact/', contact, name='contact'),  # Agrega esta línea
     
 ]
 handler404 = 'portfolio.views.handling_404'
+handler500 = 'portfolio.views.custom_500'
 
 # Agrega la configuración para servir archivos multimedia (archivos cargados) durante el desarrollo.
 if settings.DEBUG:

@@ -24,3 +24,10 @@ def projects_view(request):
 
 def handling_404(request, exception):
     return render(request,'404.html',{})
+
+
+def custom_500(request):
+    return render(request, '500.html', status=500)
+
+def hello_word(request):
+    raise Exception('error 500')
